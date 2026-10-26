@@ -183,7 +183,7 @@ services:
       # Nothing else to set: the entrypoint reads the socket's group and joins it
       # before dropping to the app user.
       # UNVERIFIED on this platform — see the note in `environment` above.
-      - ${DOCKER_SOCKET_PATH:-/var/run/docker.sock}:${DOCKER_SOCKET_PATH:-/var/run/docker.sock}
+      - /var/run/docker.sock:/var/run/docker.sock
     security_opt:
       - no-new-privileges:true
 
